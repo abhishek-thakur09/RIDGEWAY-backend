@@ -1,5 +1,4 @@
 const express = require("express");
-const DatabaseConnect = require("./src/database/database");
 const http = require("http");
 const cors = require('cors');
 require("dotenv").config();
@@ -30,14 +29,8 @@ const server = http.createServer(app);
 
 
 
-DatabaseConnect()
-  .then(() => {
-    console.log("databse connected successfully");
 
     server.listen(3000,() => {
       console.log(`Server is running on ${process.env.PORT_NO} `);
     });
-  })
-  .catch((err) => {
-    console.log("db cannot be connected " + err.message);
-  });
+  
