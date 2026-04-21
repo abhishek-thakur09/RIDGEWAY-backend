@@ -6,7 +6,7 @@ require("dotenv").config();
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ["https://ridgeway-frontend.onrender.com","http://localhost:5173"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -21,16 +21,10 @@ const AiRouter = require('./src/Helper/Aihelper');
 app.use('/', AiRouter);
 
 
-
-
 const server = http.createServer(app);
 
 
-
-
-
-
-    server.listen(3000,() => {
+    server.listen(process.env.PORT|| 3000,() => {
       console.log(`Server is running on ${process.env.PORT_NO} `);
     });
   
