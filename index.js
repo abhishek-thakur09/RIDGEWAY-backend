@@ -6,8 +6,8 @@ require("dotenv").config();
 const app = express();
 app.use(
   cors({
-    origin: ["https://ridgeway-frontend.onrender.com","http://localhost:5173"],
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    origin: "https://ridgeway-frontend.onrender.com",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   }),
